@@ -3,7 +3,7 @@
 
 <span>
 Github:
-<a href="https://github.com/jonasschmedtmann/html-css-course"> HTML and CSS git </a>
+<a href="https://github.com/jonasschmedtmann/complete-node-bootcamp"> NodeJS git </a>
 </span>
 <span>
 <br>
@@ -31,4 +31,4 @@ Information :
   <li>! + tab will gain in VS-code and auto HTML default format</li> 
 </ul>
 
-Section 2 - HTML Fundamentals
+Section 2 -
