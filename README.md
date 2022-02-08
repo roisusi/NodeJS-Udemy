@@ -15,12 +15,12 @@ Resourses:
 <br>
 
 <h2>Lectures: </h2>
-Section 1 - Section 1: Welcome and First Steps (no code)
+Section 1 - Welcome,Welcome,Welcome (no code)
 <br>
 <span>
-Setting VS Code:
+Install NodeJS
 <ul>
-  <li>Prettier Formatter - Set default formatter</li> 
+  <li><a href="https://nodejs.org/en/">  NodeJS Website</a></li> 
   <li>One Monokai Theme</li> 
   <li>Tab size = 2</li>
   <li>Auto Save - Setting->auto save-> onFocusChange</li>
