@@ -18,17 +18,10 @@ Resourses:
 Section 1 - Welcome,Welcome,Welcome (no code)
 <br>
 <span>
-Install NodeJS
+  <b>Install NodeJS:</b>
 <ul>
-  <li><a href="https://nodejs.org/en/">  NodeJS Website</a></li> 
-  <li>One Monokai Theme</li> 
-  <li>Tab size = 2</li>
-  <li>Auto Save - Setting->auto save-> onFocusChange</li>
+  <li><a href="https://nodejs.org/en/">NodeJS Website</a> download LTS</li> 
+  <li>node -v : is version of the NodeJS</li> 
 </ul>
 </span>
-Information :
-<ul>
-  <li>! + tab will gain in VS-code and auto HTML default format</li> 
-</ul>
-
 Section 2 -
