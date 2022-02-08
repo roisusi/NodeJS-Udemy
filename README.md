@@ -24,4 +24,4 @@ Section 1 - Welcome,Welcome,Welcome (no code)
   <li>node -v : is version of the NodeJS</li> 
 </ul>
 </span>
-Section 2 -
+Section 2 - Introduction to NodeJS and NPM
