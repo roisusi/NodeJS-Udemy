@@ -25,3 +25,8 @@ Section 1 - Welcome,Welcome,Welcome (no code)
 </ul>
 </span>
 Section 2 - Introduction to NodeJS and NPM
+<ul>
+  <li>File System module</li> 
+  <li>Async VS Sync - using files</li> 
+  <li> Web Server HTTP module</li> 
+</ul>
