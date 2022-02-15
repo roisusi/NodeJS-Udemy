@@ -28,5 +28,14 @@ Section 2 - Introduction to NodeJS and NPM
 <ul>
   <li>File System module</li> 
   <li>Async VS Sync - using files</li> 
-  <li> Web Server HTTP module</li> 
+  <li>Web Server HTTP module - creating listeners for server port</li>  
+  <li>Routing using url module</li>
+  <li>Build nice Api website</li>
+  <li>Working with npm</li>
+  <li>Change configuration to .prettierrc</li>
+</ul>
+Section 6 - Express: Let's Start Building the Natours API!
+<ul>
+  <li>...</li>
+
 </ul>

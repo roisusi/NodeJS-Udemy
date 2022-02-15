@@ -7,6 +7,14 @@
 const hello = "Hello World";
 //console.log(hello);
 
+//******************************//
+//           Slugify            //
+//******************************//
+
+const slugify = require("slugify");
+
+console.log(slugify("Avocado", { lower: true }));
+
 //*****************************//
 //     File System module      //
 //*****************************//
