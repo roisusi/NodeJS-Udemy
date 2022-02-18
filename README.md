@@ -40,7 +40,7 @@ Section 6 - Express: Let's Start Building the Natours API!
   <li>Working with Postman and send get/post</li> 
   <li>Quick brief of RESTful</li>
   <span>
-    <b>Builing Natours</b>
+    <li><b>Builing Natours</b></li>
   <ul>
     <li>Get and Post data to json file</li> 
     <li>Saving the Post and Get into a collections</li> 
