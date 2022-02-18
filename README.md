@@ -36,6 +36,12 @@ Section 2 - Introduction to NodeJS and NPM
 </ul>
 Section 6 - Express: Let's Start Building the Natours API!
 <ul>
-  <li>...</li>
-
+  <li>Installing express</li> 
+  <li>Working with Postman and send get/post</li> 
+  <li>Quick brief of RESTful</li>  
+  <ul>
+    <h4>Builing Natours <h4>
+    <li>Get and Post data to json file</li> 
+    <li>Saving the Post and Get into a collections</li> 
+  </ul> 
 </ul>
