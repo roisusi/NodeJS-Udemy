@@ -38,10 +38,20 @@ Section 6 - Express: Let's Start Building the Natours API!
 <ul>
   <li>Installing express</li> 
   <li>Working with Postman and send get/post</li> 
-  <li>Quick brief of RESTful</li>
+  <li>Quick brief of RESTful API</li>
   <li><b>Builing Natours</b></li>
   <ul>
     <li>Get and Post data to json file</li> 
     <li>Saving the Post and Get into a collections</li> 
+    <li>Using CRUD using app.get/post/patch/delete</li> 
+    <li>Orginaized in app.route</li> 
+    <li>Installin npm morgen for better console routing messages</li>
+    <li>Understanding the middleware interface using for exp: app.use() and the next()</li>
+    <li>Split to folders for routes and controllers</li>
+    <li>middleware useing .param(...)</li>
+    <li>Check params before post in .post(checksomething , post it)</li>
+    <li>Using middleware static routes from a folders</li>
+    <li>Environment variables</li>
+    <li>Config .eslintrc.json</li>
   </ul>
 </ul>
