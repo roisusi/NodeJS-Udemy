@@ -55,3 +55,7 @@ Section 6 - Express: Let's Start Building the Natours API!
     <li>Config .eslintrc.json</li>
   </ul>
 </ul>
+Section 7 - Introduction to MongoDB
+<ul>
+  <li>Theory on MongoDB</li>
+</ul>
