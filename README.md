@@ -58,4 +58,17 @@ Section 6 - Express: Let's Start Building the Natours API!
 Section 7 - Introduction to MongoDB
 <ul>
   <li>Theory on MongoDB</li>
+  <li>Installing MongoDB locally on the computer Win/Mac</li>
+  <li>Configure MongoDB atlas</li>
+  <li>Connect to MongoDB atlas from the project</li>
+</ul>
+Section 8 - Using MongoDB with Mongoose
+<ul>
+  <li>Creating Schema</li>
+  <li>Working with MVC</li>
+  <li>CRUD with mongoDB</li>
+  <li>Nice scritp with argv</li>
+  <li>Working with Query: Find Sort Select Skip Limit</li>
+  <li>Working with Class and save API Query on it</li>
+  <li>Aggregation Pipeline: Matching and Grouping</li>
 </ul>

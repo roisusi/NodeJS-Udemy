@@ -3,7 +3,7 @@
 //----------//
 
 const express = require('express');
-const userControllers = require('./../controllers/userControllers');
+const userControllers = require('../controllers/userControllers');
 
 //------------------//
 // Global Variables //

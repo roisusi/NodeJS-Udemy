@@ -15,13 +15,15 @@ const tourRouter = express.Router();
 // Middleware //
 //------------//
 
-tourRouter.param('id', tourController.CheckID);
+// tourRouter.param('id', tourController.CheckID);
 
 //--------//
 // Routes //
 //--------//
 
-tourRouter.route('/').get(tourController.readAllTours).post(tourController.CheckBody, tourController.createTour);
+// tourRouter.route('/').get(tourController.readAllTours).post(tourController.CheckBody, tourController.createTour); //check tourController.CheckBody before post
+tourRouter.route('/top-5-cheap').get(tourController.aliasTopTours, tourController.readAllTours);
+tourRouter.route('/').get(tourController.readAllTours).post(tourController.createTour);
 tourRouter.route('/:id').get(tourController.readOneTour).patch(tourController.updateTour).delete(tourController.deleteTour);
 
 module.exports = tourRouter;

@@ -45,7 +45,7 @@ console.log("File Written\n");
 //Also called None Blocking Code
 
 //Example
-//fs.readFileS gets a callback function and read the file in the background and move to the next statement
+//fs.readFile gets a callback function and read the file in the background and move to the next statement
 //Using callback
 fs.readFile("../section2/TextFiles/start1.txt", "utf-8", (err, data) => {
   if (err) {
