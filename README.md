@@ -71,4 +71,5 @@ Section 8 - Using MongoDB with Mongoose
   <li>Working with Query: Find Sort Select Skip Limit</li>
   <li>Working with Class and save API Query on it</li>
   <li>Aggregation Pipeline: Matching and Grouping</li>
+  <li>Validators Build-in and Customs and from validator library on GitHub</li>
 </ul>
