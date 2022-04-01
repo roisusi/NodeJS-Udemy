@@ -3,9 +3,11 @@
 //----------//
 
 const dotenv = require('dotenv');
+
 dotenv.config({ path: './config.env' });
+
 const mongoose = require('mongoose');
-const slugify = require('slugify');
+// const slugify = require('slugify');
 
 //-----------//
 // Database //
@@ -34,6 +36,9 @@ const tourSchema = new mongoose.Schema(
 
   { toJSON: { virtuals: true }, toObject: { virtuals: true } } //options cant use in query DB
 );
+//------------//
+// Aggregates //
+//------------//
 
 // Virtuals (not od db but on server document)
 tourSchema.virtual('durationWeeks').get(function () {
@@ -51,16 +56,22 @@ tourSchema.virtual('durationWeeks').get(function () {
 //   next();
 // });
 
-//QUERY MIDDLEWARE:
-tourSchema.pre(/^find/, function (next) {
-  this.find({ secretTour: { $ne: true } });
-  this.start = Date.now();
-  next();
-});
+//QUERY MIDDLEWARE: this point to the query
+// tourSchema.pre(/^find/, function (next) {
+//   this.find({ secretTour: { $ne: true } });
+//   this.start = Date.now();
+//   next();
+// });
 
-tourSchema.post(/^find/, function (docs, next) {
-  console.log(`Query took : ${Date.now() - this.start} ms`);
-  console.log(docs);
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`Query took : ${Date.now() - this.start} ms`);
+//   console.log(docs);
+//   next();
+// });
+
+//AGGREGATE MIDDLEWARE: this point to the aggregate
+tourSchema.pre('aggregate', function (next) {
+  this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
   next();
 });
 

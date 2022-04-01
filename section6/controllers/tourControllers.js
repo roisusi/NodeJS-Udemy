@@ -41,7 +41,7 @@ exports.readTourStats = async (req, res) => {
   try {
     const stats = await Tour.aggregate([
       {
-        $match: { ratingsAverage: { $gte: 4.5 } },
+        $match: { ratingsAverage: { $gte: 1 } },
       },
       {
         $group: {
@@ -57,9 +57,9 @@ exports.readTourStats = async (req, res) => {
       {
         $sort: { avgPrice: 1 }, //1 - asce ; -1 - decen
       },
-      {
-        $match: { _id: { $ne: 'EASY' } }, //not equals (mean not EASY)
-      },
+      // {
+      //   $match: { _id: { $ne: 'EASY' } }, //not equals (mean not EASY)
+      // },
     ]); //[] - stages
 
     res.status(200).json({ status: 'success', message: stats });
