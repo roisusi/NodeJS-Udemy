@@ -76,4 +76,7 @@ Section 8 - Using MongoDB with Mongoose
 Section 9 - Using MongoDB with Mongoose
 <ul>
   <li>ndb</li>
+  <li>Using app.all for all API methods</li>
+  <li>Express error handler</li>
+  <li>Create an Error Class</li>
 </ul>
