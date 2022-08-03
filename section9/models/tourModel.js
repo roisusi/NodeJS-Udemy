@@ -9,7 +9,7 @@ dotenv.config({ path: './config.env' });
 const mongoose = require('mongoose');
 // const slugify = require('slugify');
 
-const validator = require('validator');
+// const validator = require('validator');
 
 //-----------//
 // Database //
@@ -24,7 +24,7 @@ const tourSchema = new mongoose.Schema(
       trim: true,
       maxlength: [40, 'A Tour name must have less or equal then 40 chars'],
       minlength: [10, 'A Tour name must have more or equal then 10 chars'],
-      validate: [validator.isAlpha, 'Tour Name must contain only alphanumeric characters'],
+      // validate: [validator.isAlpha, 'Tour Name must contain only alphanumeric characters'],
     },
     duration: { type: Number, required: [true, 'A tour must have a duration'] },
     maxGroupSize: { type: Number, required: [true, 'A tour must have a size'] },
