@@ -81,4 +81,5 @@ Section 9 - Using MongoDB with Mongoose
   <li>Create an Error Class</li>
   <li>Deal with Async errors</li>
   <li>Handling Error from MongoDB like Validation Error (catch them and send a nice messages)</li>
+  <li>using Process Events on Node JS like proceess.on('unhandledRejection',err....)</li>
 </ul>
