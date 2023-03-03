@@ -8,6 +8,7 @@ const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
+const http = require('http');
 
 //------------------//
 // Global Variables //
@@ -22,7 +23,7 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
-  req.requestTime = new Date().toISOString();
+  req.requestTime = new Date().toISOString(); //browser time
   next();
 });
 

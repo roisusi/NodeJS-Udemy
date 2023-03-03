@@ -19,6 +19,7 @@ const router = express.Router();
 
 //for authenticated users
 router.post('/signup', authControllers.signup);
+router.post('/login', authControllers.login);
 
 //for users
 router.route('/').get(userControllers.readAllUsers).post(userControllers.createUser);
