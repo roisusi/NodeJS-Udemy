@@ -1,9 +1,10 @@
+const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
-const signToken = (id) => jwt.sign({ id: id }, process.env.JWT_SECRET, { expiresIn: 3600 });
+const signToken = (id) => jwt.sign({ id: id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
 
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create({
@@ -11,9 +12,11 @@ exports.signup = catchAsync(async (req, res, next) => {
     email: req.body.email,
     password: req.body.password,
     passwordConfirmation: req.body.passwordConfirmation,
+    passwordChangedAt: req.body.passwordChangedAt,
+    role: req.body.role,
   });
 
-  const token = signToken(300685906);
+  const token = signToken(newUser._id);
 
   res.status(201).json({
     status: 'success',
@@ -56,8 +59,32 @@ exports.protect = catchAsync(async (req, res, next) => {
   if (!token) {
     return next(new AppError('You are not logged in', 401));
   }
+
   //2) Verification token
+  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+
   //3) Check if user still exists
+  const currrentUser = await User.findById(decoded.id);
+  if (!currrentUser) {
+    return next(new AppError('User not found', 401));
+  }
+
   //4) Check if user changed password after the token was issued
+  if (await currrentUser.changePasswordAfter(decoded.iat)) {
+    return next(new AppError('User recently changed password, Please login again', 401));
+  }
+
+  //Grant Access To Protected Route
+  req.user = currrentUser;
   next();
 });
+
+exports.restrictTo =
+  (...roles) =>
+  //roles are array of strings and need to check if user has role
+  (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(new AppError('You do not have permission to perform this action', 403));
+    }
+    next();
+  };

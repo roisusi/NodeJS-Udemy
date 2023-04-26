@@ -17,6 +17,10 @@ const handelValidationErrorDB = (err) => {
   return new AppError(message, 400);
 };
 
+const handleJWTError = () => new AppError('Invalid token. Please login again!', 401);
+
+const handleJWTExpiredError = () => new AppError('Your token has expired. Please login again!', 401);
+
 const sendErrorforDev = (err, res) => {
   res.status(err.statusCode).json({ status: err.status, message: err.message, error: err, stack: err.stack });
 };
@@ -30,7 +34,7 @@ const sendErrorforProd = (err, res) => {
     //1. log error message
     console.log('Error !!!', err);
     //2. send error message
-    res.status(500).json({ status: 'ERROR', message: err });
+    res.status(500).json({ status: 'error', message: 'Something went very wrong' });
   }
 };
 
@@ -52,6 +56,14 @@ module.exports = (err, req, res, next) => {
     if (error.name === 'ValidationError') {
       error = handelValidationErrorDB(error);
     }
+    //invalid token error
+    if (error.name === 'JsonWebTokenError') {
+      error = handleJWTError();
+    }
+    if (error.name === 'TokenExpiredError') {
+      error = handleJWTExpiredError();
+    }
+
     sendErrorforProd(error, res);
   }
 };
